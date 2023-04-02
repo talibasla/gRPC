@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+
+service UserService{
+    rpc createUser(User) returns (User){};
+    rpc getUsers(UserRes) returns (Users){};
+}
+
+
+message User{
+    required string id = 1;
+    required string user_name = 2;
+    required string email = 3;
+}
+
+message Users{
+    repeated User users = 1;
+}
+
+message UserRes{}
+
+
+message Response{
+    repeated string msg = 1;
+}
